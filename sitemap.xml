@@ -2,16 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://www.xygblog.com/p/2fdb9925/</loc>
-    
-    <lastmod>2022-06-12</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.xygblog.com/p/85d08e87/</loc>
+    <loc>https://www.xygblog.com/p/8ebdba58/</loc>
     
     <lastmod>2022-06-12</lastmod>
     
@@ -29,7 +20,16 @@
   </url>
   
   <url>
-    <loc>https://www.xygblog.com/p/8ebdba58/</loc>
+    <loc>https://www.xygblog.com/p/85d08e87/</loc>
+    
+    <lastmod>2022-06-12</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.xygblog.com/p/2fdb9925/</loc>
     
     <lastmod>2022-06-12</lastmod>
     
@@ -189,6 +189,13 @@
   
   <url>
     <loc>https://www.xygblog.com/categories/%E5%89%8D%E7%AB%AF/</loc>
+    <lastmod>2022-06-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.xygblog.com/categories/Hexo/NexT/</loc>
     <lastmod>2022-06-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
