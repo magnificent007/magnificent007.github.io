@@ -146,14 +146,14 @@
 
   
   <url>
-    <loc>https://www.xygblog.com/tags/Next/</loc>
+    <loc>https://www.xygblog.com/tags/Hexo/</loc>
     <lastmod>2022-06-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://www.xygblog.com/tags/Hexo/</loc>
+    <loc>https://www.xygblog.com/tags/Next/</loc>
     <lastmod>2022-06-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
