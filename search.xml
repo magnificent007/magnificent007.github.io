@@ -376,4 +376,48 @@
         <tag>JavaScript</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Hexo&amp;github action持续部署</title>
+    <url>/p/1c16feaa/</url>
+    <content><![CDATA[<h3 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h3><ul>
+<li>为了免除日常新建hexo new，hexo s，hexo g，hexo d等繁琐的书写部署流程指令，同时为了更加注重于博客内容本身而不是到新机器重新配置Hexo走一遍部署流程</li>
+</ul>
+<hr>
+<h3 id="新建Hexo源码库"><a href="#新建Hexo源码库" class="headerlink" title="新建Hexo源码库"></a>新建Hexo源码库</h3><ul>
+<li>在你本地博客根目录下新建一个.gitignore文件，内容如下： <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">.deploy_git</span><br><span class="line">node_modules</span><br><span class="line">public</span><br></pre></td></tr></table></figure></li>
+<li>到github上新建一个私有仓库，专门用来存放你的Hexo源码。注意不是通过hexo d部署后的代码，而是同过push远程仓库的本地目录源码，目前先不用push，建好仓库就行<br> <img data-src="https://img-blog.csdnimg.cn/2d0c0f868c374925a88d96f6a5a65769.png" alt="图1"></li>
+</ul>
+<hr>
+<h3 id="部署私钥"><a href="#部署私钥" class="headerlink" title="部署私钥"></a>部署私钥</h3><ul>
+<li>在Hexo私有源码库将git的私钥进行添加，作为DEPLOY_KEY。位置：Settings &gt; Secrets<br><img data-src="https://img-blog.csdnimg.cn/b6ea875ea8c14a8bab1a9acf32549e27.png" alt="图2"></li>
+</ul>
+<hr>
+<h3 id="新建存放Hexo博客的公有库"><a href="#新建存放Hexo博客的公有库" class="headerlink" title="新建存放Hexo博客的公有库"></a>新建存放Hexo博客的公有库</h3><ul>
+<li>在github上新建一个公有仓库，用来存放你生成的Hexo博客，并使用github pages。具体做法在搭建hexo博客的过程会接触到，不细说。<br> <img data-src="https://img-blog.csdnimg.cn/ab8611b0fab5401b83138cfca20bd93f.png" alt="图3"></li>
+</ul>
+<hr>
+<h3 id="新建hexo-deploy-xml"><a href="#新建hexo-deploy-xml" class="headerlink" title="新建hexo-deploy.xml"></a>新建hexo-deploy.xml</h3><ul>
+<li>在本地hexo博客根目录下的.github文件夹下新建workflows文件夹，新建hexo-deploy.xml文件。</li>
+<li>具体书写内容可参考 <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL21hcmtldHBsYWNlL2FjdGlvbnMvaGV4by1hY3Rpb24=">GitHub Action ~ Hexo Action<i class="fa fa-external-link-alt"></i></span></li>
+<li>我个人修改内容如下： <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">......</span><br><span class="line"># <span class="title class_">Deploy</span> hexo blog website.</span><br><span class="line">- <span class="attr">name</span>: <span class="title class_">Deploy</span></span><br><span class="line">    <span class="attr">id</span>: deploy</span><br><span class="line">    <span class="attr">uses</span>: sma11black/hexo-action@v1<span class="number">.0</span><span class="number">.3</span></span><br><span class="line">    <span class="attr">with</span>:</span><br><span class="line">        <span class="attr">deploy_key</span>: $&#123;&#123; secrets.<span class="property">DEPLOY_KEY</span> &#125;&#125;</span><br><span class="line">        <span class="attr">PUBLISH_REPOSITORY</span>: # <span class="title class_">Hexo</span>公共仓库，格式：<span class="title class_">GitHub</span> 用户名/仓库名</span><br><span class="line">        <span class="attr">BRANCH</span>: # <span class="title class_">Hexo</span>公共仓库分支，你生成博客存放的分支</span><br><span class="line">        <span class="attr">PUBLISH_DIR</span>: ./public # 部署 public 目录下的生成博客文件，默认不用修改</span><br><span class="line">......</span><br></pre></td></tr></table></figure></li>
+<li>然后将你的hexo源码push到远程私有仓库上</li>
+</ul>
+<hr>
+<h3 id="发布文章"><a href="#发布文章" class="headerlink" title="发布文章"></a>发布文章</h3><ul>
+<li>在你博客本地目录下的source文件夹内的_posts文件夹下尽情书写博客吧</li>
+<li>写完博客通过关联远程Hexo私有源码库进行push，github action检测到分支变动会进行重新编译并重新部署public下博客内容到你的公有库</li>
+<li>当你换一台机器进行博客书写，只需要关联远程源码库进行pull下，就可以马上进行内容书写了</li>
+</ul>
+<hr>
+<h3 id="其他途径方式"><a href="#其他途径方式" class="headerlink" title="其他途径方式"></a>其他途径方式</h3><ul>
+<li>Travis CI</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
 </search>
