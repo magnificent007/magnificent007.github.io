@@ -368,7 +368,7 @@
 <h3 id="concat"><a href="#concat" class="headerlink" title="concat"></a>concat</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> strArr = [<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span>]</span><br><span class="line"><span class="keyword">let</span> str = <span class="string">&#x27;&#x27;</span>.<span class="title function_">concat</span>(...strArr)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(str)</span><br></pre></td></tr></table></figure>
 
 <hr>
-]]></content>
+<h3 id="待续"><a href="#待续" class="headerlink" title="待续"></a>待续</h3>]]></content>
       <categories>
         <category>前端</category>
       </categories>
