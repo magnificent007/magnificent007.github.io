@@ -334,4 +334,46 @@
         <tag>阅读感悟</tag>
       </tags>
   </entry>
+  <entry>
+    <title>字符串常用方法</title>
+    <url>/p/47556d42/</url>
+    <content><![CDATA[<h3 id="at"><a href="#at" class="headerlink" title="at"></a>at</h3><ul>
+<li>接收一个整数作为参数，返回一个新字符串</li>
+<li>参数范围为<code>0 ~ String.length-1</code>，不传参默认为0，超出返回undefined <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> str = <span class="string">&#x27;abcde&#x27;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(str.<span class="title function_">at</span>(<span class="number">1</span>))      <span class="comment">// &#x27;b&#x27;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(str.<span class="title function_">at</span>(-<span class="number">2</span>))     <span class="comment">// &#x27;d&#x27;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<hr>
+<h3 id="charAt"><a href="#charAt" class="headerlink" title="charAt"></a>charAt</h3><ul>
+<li>从一个字符串中返回指定字符</li>
+<li>接收一个整数作为参数，范围为<code>0 ~ String.length-1</code>，不传参默认为0，超出返回空字符串</li>
+</ul>
+<hr>
+<h3 id="indexOf-amp-lastIndexOf"><a href="#indexOf-amp-lastIndexOf" class="headerlink" title="indexOf &amp; lastIndexOf"></a>indexOf &amp; lastIndexOf</h3><ul>
+<li>indexOf查找给定字符串<code>第一次</code>匹配位置，位置以给定字符串的第一个字符位置为返回，区分大小写</li>
+<li>indexOf参数：searchString；fromIndex，开始查找的位置，默认0，范围0~string.length，&lt; 0则从0<code>向后</code>开始查找，&gt; string.length则从string.length开始<code>向后</code>查找，结果返回-1 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> str = <span class="string">&#x27;Hello World!&#x27;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(str.<span class="title function_">indexOf</span>(<span class="string">&#x27;o&#x27;</span>))       <span class="comment">// 4</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(str.<span class="title function_">indexOf</span>(<span class="string">&#x27;o&#x27;</span>, -<span class="number">1</span>))   <span class="comment">// 4</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(str.<span class="title function_">indexOf</span>(<span class="string">&#x27;o&#x27;</span>, <span class="number">11</span>))   <span class="comment">// -1</span></span><br></pre></td></tr></table></figure></li>
+<li>lastIndexOf查找给定字符串<code>最后一次</code>匹配位置，位置以给定字符串的第一个字符位置为返回，区分大小写</li>
+<li>lastIndexOf参数：searchString；fromIndex，开始查找的位置，默认string.length，范围0~string.length，&lt; 0则从0开始<code>向前</code>查找，结果返回-1，&gt; string.length则从string.length开始<code>向前</code>查找 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> str = <span class="string">&#x27;Hello World!&#x27;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(str.<span class="title function_">lastIndexOf</span>(<span class="string">&#x27;o&#x27;</span>))       <span class="comment">// 7</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(str.<span class="title function_">lastIndexOf</span>(<span class="string">&#x27;o&#x27;</span>, -<span class="number">1</span>))   <span class="comment">// -1</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(str.<span class="title function_">lastIndexOf</span>(<span class="string">&#x27;o&#x27;</span>, <span class="number">11</span>))   <span class="comment">// 7</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<hr>
+<h3 id="includes"><a href="#includes" class="headerlink" title="includes"></a>includes</h3><ul>
+<li>是否包含searchString，返回true or false，区分大小写</li>
+<li>参数：searchString；position，从当前字符串的哪个索引位置开始搜寻子字符串，默认值为 0</li>
+</ul>
+<hr>
+<h3 id="endsWith-amp-startsWith"><a href="#endsWith-amp-startsWith" class="headerlink" title="endsWith &amp; startsWith"></a>endsWith &amp; startsWith</h3><ul>
+<li>区分大小写</li>
+<li>endsWith：判断当前字符串是否是以另外一个给定的子字符串结尾的，结果返回true or false。参数：searchString；length(可选)，作为str的长度 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> str = <span class="string">&#x27;Today is cloudy!&#x27;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(str.<span class="title function_">endsWith</span>(<span class="string">&#x27;Today&#x27;</span>, <span class="number">5</span>))   <span class="comment">// true</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(str.<span class="title function_">endsWith</span>(<span class="string">&#x27;Today&#x27;</span>, <span class="number">4</span>))   <span class="comment">// false</span></span><br></pre></td></tr></table></figure></li>
+<li>startsWith: 判断当前字符串是否是以另外一个给定的子字符串开头的，结果返回true or false。参数：子字符串；position(可选)，作为str开始的位置</li>
+</ul>
+<hr>
+<h3 id="concat"><a href="#concat" class="headerlink" title="concat"></a>concat</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> strArr = [<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span>]</span><br><span class="line"><span class="keyword">let</span> str = <span class="string">&#x27;&#x27;</span>.<span class="title function_">concat</span>(...strArr)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(str)</span><br></pre></td></tr></table></figure>
+
+<hr>
+]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+      </tags>
+  </entry>
 </search>
